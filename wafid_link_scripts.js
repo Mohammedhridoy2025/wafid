@@ -1,4 +1,4 @@
 Username: test.admin432                      Total balance: 128.37
                           System Offline
-  Today's system will only be open for 30 minutes from 10:50 to 11:20.
-3 files submitted No link
+Validation time is 5 minutes.
+https://wafid.com/appointment/2WX65Y92BNJ5d1N/pay/
