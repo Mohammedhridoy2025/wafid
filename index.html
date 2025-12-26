@@ -1,0 +1,1771 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://objectstorage.me-jeddah-1.oraclecloud.com/n/axcv6afvufi6/b/Rum-JS-Public/o/elastic-apm-rum.umd.min.js"
+            crossorigin></script>
+
+
+    <link rel="icon" type="image/x-icon" href="/static/svg/logo-favicon-light.svg">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146902071-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-146902071-1');
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Wafid | وافد</title>
+    <meta name="description" content="Wafid is a program under the umbrella of the Gulf Health Council that enables individuals bound to work or reside in the GCC to book their medical check-up appointments.
+    وافد هو احدى برامج مجلس الصحة الخليجي غرضه توفير مواعيد الفحص الطبي للوافدين القادمين الى دول مجلس التعاون الخليجي بغرض العمل او الإقامة.">
+    <meta name="keywords"
+          content="Wafid, GCC, GHC, Medical center, Gulf Cooperation Council States, Medical Examinations, health check-up, appointment, medical centers accreditation, Accreditation status">
+
+
+    <!-- ISO 3166-1-alpha-2 Flags style-->
+    
+
+    <link rel="stylesheet" href="https://wafid.com/static/country-flags/image_sprite/ip2location-image-sprite.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin=""/>
+
+
+    
+    
+        
+
+            <link rel="stylesheet" href="https://wafid.com/static/vendor/semantic/dist/semantic.min.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/semantic-responsive.css">
+
+            <!-- Glide.js styles -->
+            <link rel="stylesheet" href="https://wafid.com/static/css/vendor/glide.core.min.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/vendor/glide.theme.min.css">
+
+            <!-- CropperJS styles -->
+            <link rel="stylesheet" href="https://wafid.com/static/css/vendor/cropper.min.css">
+
+            <!-- Custom styles -->
+            <link rel="stylesheet" href="https://wafid.com/static/css/main.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/menu.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/instant-notifications.css">
+
+            <!-- Components -->
+            <link rel="stylesheet" href="https://wafid.com/static/css/components/breadcrumbs.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/components/cards.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/components/forms.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/components/glide.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/components/menu.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/components/table.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/components/message.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/components/modal.css">
+            <link rel="stylesheet" href="https://wafid.com/static/css/components/icons.css">
+        
+    
+    
+	    <link rel="stylesheet" href="https://wafid.com/static/css/components/gcc-slip.css">
+        <link rel="stylesheet" href="https://wafid.com/static/css/components/captcha.css">
+    
+
+    
+    
+        <script type="text/javascript">
+        function printTrigger(elementId) {
+          var getMyFrame = document.getElementById(elementId);
+          getMyFrame.focus();
+          getMyFrame.contentWindow.print();
+        }
+        </script>
+    
+
+</head>
+<body>
+
+    
+        <div class="ui menu basic borderless gcc-menu">
+            
+                <div class="item">
+                    <a href="/" id="gcc-header-icon-continer" class="header item brand menu-lsc-fix">
+                        <img class="ui image" src="https://wafid.com/static/svg/logo.svg">
+                    </a>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                    <div class="ui container">
+                    <div class="ui grid gcc-submenu-wrapper">
+                        <div class="full wide column">
+                            <div class="ui menu stackable gcc-submenu">
+                                <div class="ui container centered gcc-submenu-continer width-edit">
+                                    
+
+    
+
+<a class=" item" href="/">Home</a>
+
+<!---->
+<!--    <div class="ui pointing dropdown item ">-->
+<!--        GHC accreditation-->
+<!--        <i class="dropdown icon"></i>-->
+<!--        <div class="menu">-->
+<!--            <a class="item"-->
+<!--               href="/accreditation/apply/">Apply for accreditation </a>-->
+<!--            <a class="item"-->
+<!--               href="/accreditation/status/">Check accreditation status</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+
+
+
+
+    <div class="ui pointing dropdown item ">
+        Medical Examinations
+        <i class="dropdown icon"></i>
+        <div class="menu">
+            <a class="item"
+               href="/book-appointment/">Book an Appointment </a>
+            <a class="item"
+               href="/search-slip/">Appointment Slips</a>
+            <a class="item"
+               href="/medical-status-search/">Medical Examination Result</a>
+        </div>
+    </div>
+
+
+
+<!--<a class=" item"-->
+<!--   href="/medical-status-search/">Health Check-Up</a>-->
+
+<!--<a class=" item"-->
+<!--   href="/medical-center/medical-center/">Medical centers</a>-->
+
+
+    <div class="ui pointing dropdown item ">
+        Medical Centers
+        <i class="dropdown icon"></i>
+        <div class="menu">
+            <a class="item"
+               href="/medical-center/medical-center/">Wafid Medical Centers Accreditation</a>
+            <a class="item"
+               href="/medical-center/search/">Medical Centers List</a>
+        </div>
+    </div>
+
+
+
+<a class=" item"
+   href="/guidelines/">Guidelines</a>
+
+<!---->
+<!--    <div class="ui pointing dropdown item ">-->
+<!--        Check status-->
+<!--        <i class="dropdown icon"></i>-->
+<!--        <div class="menu">-->
+<!--            <a class="item"-->
+<!--               href="/medical-status-search/">Check candidate status</a>-->
+<!--            <a class="item"-->
+<!--               href="/certificate-search/">Membership certeficate</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+
+
+<a class=" item"
+   href="/faq/">FAQs</a>
+<!--<a class="item" href="/static/pdf/Regulations%20of%20Medical%20Examination%20of%20Expatriates%20Coming%20to%20GCC%20States%20for%20Work%20or%20Residence.pdf"-->
+<!--   target="_blank">Rules and regulations</a>-->
+
+<a class=" item" href="/contact-us/">Contact Us</a>
+
+
+
+                                    
+                                        <a class="item mobile tablet only"
+                                           href="/select-type/">Login</a>
+                                    
+
+                                    
+                                        <div class="item support-phone mobile tablet only">
+                                            <img src="https://wafid.com/static/svg/headset.svg" class="support-icon">
+                                            <b>
+                                                <a href="tel:+966920023560">+966920023560</a>
+                                            </b>
+                                        </div>
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+
+                <div class="right menu" style="padding-right: 3%">
+                    
+                    
+                        <div class="item tablet or lower hidden">
+                            <a class="ui secondary button" id="gcc-header-login-botton"
+                               href="/select-type/">Login</a>
+                        </div>
+                    
+
+                    <div class="mobile tablet only right menu menu-icon menu-lsc-fix">
+                        <button class="button basic" id="menubutton">
+                            <i class="bars icon"></i>
+                            <i class="x icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+            
+        </div>
+    
+
+    
+    
+
+
+
+
+
+    <main class="">
+        
+
+<div id="generic-download-file" data-bs-dismiss="modal" class="messages" style="display: none;">
+    <div class="ui message" id="message-type">
+        <i class="close icon" onclick="closeMessageBox()"></i>
+        <div class="header" id="message-content">
+        </div>
+    </div>
+</div>
+
+<script>
+    // Close button handler
+    function closeMessageBox() {
+        const msgBox = document.getElementById("generic-download-file");
+        msgBox.style.display = 'none';
+    }
+</script>
+
+        
+    <div id="js-messages"></div>
+	<div class="ui vertical basic segment slip-search">
+		<div class="ui container container-dashboard">
+			<div class="ui fluid card gcc-card">
+				<div class="content">
+					<form class="ui form" action="/search-slip/" method="post">
+						<input type="hidden" name="csrfmiddlewaretoken" value="kxY41OHajBaNcgO0iATCAvEi36V1tYHS840JO7wk6t5crH1XNjDRysTG2GAVtidx">
+						<div class="form-fields-container">
+							<h1>Wafid Appointment Slip</h1>
+							<div class="two fields">
+								
+                                    
+<div class="field " >
+	
+		<label>
+			Passport NO
+			
+		</label>
+	
+
+	
+		
+			<input type="text" name="passport" placeholder="Enter Passport No" maxlength="50" id="id_passport">
+		
+	
+	
+	
+		
+	
+</div>
+
+                                    
+								    
+<div class="field " >
+	
+		<label>
+			Nationality
+			
+		</label>
+	
+
+	
+		
+			<select name="nationality" id="id_nationality">
+  <option value="" selected>Select nationality</option>
+
+  <option value="1049">Afghan</option>
+
+  <option value="2">Albanian</option>
+
+  <option value="1012">Algeria</option>
+
+  <option value="3">Algerian</option>
+
+  <option value="4">American</option>
+
+  <option value="5">Andorran</option>
+
+  <option value="6">Angolan</option>
+
+  <option value="1070">Angolan</option>
+
+  <option value="7">Antiguans</option>
+
+  <option value="8">Argentinian</option>
+
+  <option value="9">Armenian</option>
+
+  <option value="10">Australian</option>
+
+  <option value="11">Austrian</option>
+
+  <option value="12">Azerbaijani</option>
+
+  <option value="13">Bahamian</option>
+
+  <option value="14">Bahraini</option>
+
+  <option value="15">Bangladeshi</option>
+
+  <option value="16">Barbadian</option>
+
+  <option value="17">Barbudans</option>
+
+  <option value="18">Batswana</option>
+
+  <option value="19">Belarusian</option>
+
+  <option value="20">Belgian</option>
+
+  <option value="21">Belizean</option>
+
+  <option value="22">Beninese</option>
+
+  <option value="23">Bhutanese</option>
+
+  <option value="24">Bolivian</option>
+
+  <option value="25">Bosnian</option>
+
+  <option value="26">Brazilian</option>
+
+  <option value="1014">Britain</option>
+
+  <option value="27">British</option>
+
+  <option value="28">Bruneian</option>
+
+  <option value="29">Bulgarian</option>
+
+  <option value="1077">Bulgarian</option>
+
+  <option value="30">Burkinabe</option>
+
+  <option value="31">Burmese</option>
+
+  <option value="32">Burundian</option>
+
+  <option value="33">Cambodian</option>
+
+  <option value="34">Cameroonian</option>
+
+  <option value="35">Canadian</option>
+
+  <option value="36">Cape Verdean</option>
+
+  <option value="37">Central African</option>
+
+  <option value="38">Chadian</option>
+
+  <option value="39">Chilean</option>
+
+  <option value="40">Chinese</option>
+
+  <option value="41">Colombian</option>
+
+  <option value="42">Comoran</option>
+
+  <option value="43">Congolese</option>
+
+  <option value="44">Costa Rican</option>
+
+  <option value="45">Croatian</option>
+
+  <option value="46">Cuban</option>
+
+  <option value="1072">Cuban</option>
+
+  <option value="47">Cypriot</option>
+
+  <option value="48">Czech</option>
+
+  <option value="49">Danish</option>
+
+  <option value="50">Djibouti</option>
+
+  <option value="1050">Dominica</option>
+
+  <option value="51">Dominican</option>
+
+  <option value="52">Dutch</option>
+
+  <option value="53">East Timorese</option>
+
+  <option value="54">Ecuadorean</option>
+
+  <option value="55">Egyptian</option>
+
+  <option value="56">Emirian</option>
+
+  <option value="57">Equatorial Guinean</option>
+
+  <option value="58">Eritrean</option>
+
+  <option value="59">Estonian</option>
+
+  <option value="60">Ethiopian</option>
+
+  <option value="61">Fijian</option>
+
+  <option value="177">Filipino</option>
+
+  <option value="63">Finnish</option>
+
+  <option value="64">French</option>
+
+  <option value="65">Gabonese</option>
+
+  <option value="66">Gambian</option>
+
+  <option value="67">Georgian</option>
+
+  <option value="68">German</option>
+
+  <option value="69">Ghanaian</option>
+
+  <option value="70">Greek</option>
+
+  <option value="71">Grenadian</option>
+
+  <option value="72">Guatemalan</option>
+
+  <option value="1076">Guatemalan</option>
+
+  <option value="73">Guinea-Bissauan</option>
+
+  <option value="74">GuineanGuyanese</option>
+
+  <option value="1067">Guineense</option>
+
+  <option value="75">Haitian</option>
+
+  <option value="76">Herzegovinian</option>
+
+  <option value="77">Honduran</option>
+
+  <option value="78">Hungarian</option>
+
+  <option value="79">Icelander</option>
+
+  <option value="1">Indian</option>
+
+  <option value="81">Indonesian</option>
+
+  <option value="82">Iranian</option>
+
+  <option value="83">Iraqi</option>
+
+  <option value="84">Irish</option>
+
+  <option value="85">Israeli</option>
+
+  <option value="86">Italian</option>
+
+  <option value="87">Ivorian</option>
+
+  <option value="88">Jamaican</option>
+
+  <option value="89">Japanese</option>
+
+  <option value="90">Jordanian</option>
+
+  <option value="91">Kazakhstani</option>
+
+  <option value="92">Kenyan</option>
+
+  <option value="93">Kittian and Nevisian</option>
+
+  <option value="180">Kittitian and Nevisian</option>
+
+  <option value="193">KOREAN</option>
+
+  <option value="94">Kuwaiti</option>
+
+  <option value="95">Kyrgyz</option>
+
+  <option value="1080">Kyrgyzstani</option>
+
+  <option value="96">Laotian</option>
+
+  <option value="97">Latvian</option>
+
+  <option value="98">Lebanese</option>
+
+  <option value="99">Liberian</option>
+
+  <option value="100">Libyan</option>
+
+  <option value="101">Liechtensteiner</option>
+
+  <option value="102">Lithuanian</option>
+
+  <option value="103">Luxembourger</option>
+
+  <option value="104">Macedonian</option>
+
+  <option value="105">Malagasy</option>
+
+  <option value="106">Malawian</option>
+
+  <option value="1069">Malawian</option>
+
+  <option value="1015">Malaysia</option>
+
+  <option value="107">Malaysian</option>
+
+  <option value="108">Maldivian</option>
+
+  <option value="109">Malian</option>
+
+  <option value="110">Maltese</option>
+
+  <option value="111">Marshallese</option>
+
+  <option value="112">Mauritanian</option>
+
+  <option value="113">Mauritian</option>
+
+  <option value="114">Mexican</option>
+
+  <option value="115">Micronesian</option>
+
+  <option value="116">Moldovan</option>
+
+  <option value="117">Monacan</option>
+
+  <option value="118">Mongolian</option>
+
+  <option value="1066">Montenegrin</option>
+
+  <option value="119">Moroccan</option>
+
+  <option value="120">Mosotho</option>
+
+  <option value="121">Motswana</option>
+
+  <option value="122">Mozambican</option>
+
+  <option value="1068">Myanmar</option>
+
+  <option value="123">Namibian</option>
+
+  <option value="124">Nauruan</option>
+
+  <option value="125">Nepalese</option>
+
+  <option value="126">Netherlander</option>
+
+  <option value="139">New Guinean</option>
+
+  <option value="127">New Zealander</option>
+
+  <option value="129">Nicaraguan</option>
+
+  <option value="130">Nigerian</option>
+
+  <option value="1073">Nigerien</option>
+
+  <option value="128">Ni-Vanuatu</option>
+
+  <option value="131">North Korean</option>
+
+  <option value="132">Northern Irish</option>
+
+  <option value="133">Norwegian</option>
+
+  <option value="134">Omani</option>
+
+  <option value="135">Pakistani</option>
+
+  <option value="136">Palauan</option>
+
+  <option value="1007">Palestine</option>
+
+  <option value="190">PALESTINIAN</option>
+
+  <option value="137">Panamanian</option>
+
+  <option value="138">Papua</option>
+
+  <option value="187">Papua New Guinean</option>
+
+  <option value="140">Paraguayan</option>
+
+  <option value="141">Peruvian</option>
+
+  <option value="142">Polish</option>
+
+  <option value="143">Portuguese</option>
+
+  <option value="1064">Portuguese</option>
+
+  <option value="144">Qatari</option>
+
+  <option value="145">Romanian</option>
+
+  <option value="146">Russian</option>
+
+  <option value="147">Rwandan</option>
+
+  <option value="1071">Rwandan</option>
+
+  <option value="1060">Saint Kitts and Nevis</option>
+
+  <option value="148">Saudi</option>
+
+  <option value="149">Scottish</option>
+
+  <option value="1074">Senegalese</option>
+
+  <option value="192">SENGALE</option>
+
+  <option value="150">Serbian</option>
+
+  <option value="1062">Sierra Leonean</option>
+
+  <option value="1053">Sierra Leonean</option>
+
+  <option value="1081">singapore</option>
+
+  <option value="151">Singaporean</option>
+
+  <option value="1079">Slovakian</option>
+
+  <option value="1078">Slovenian</option>
+
+  <option value="152">Somali</option>
+
+  <option value="1011">South Africa</option>
+
+  <option value="153">South African</option>
+
+  <option value="154">South Korean</option>
+
+  <option value="191">SOUTH SUDANESE</option>
+
+  <option value="155">Spanish</option>
+
+  <option value="156">Sri Lankan</option>
+
+  <option value="157">Sudanese</option>
+
+  <option value="158">Surinamer</option>
+
+  <option value="189">Swedish</option>
+
+  <option value="159">Swiss</option>
+
+  <option value="160">Syrian</option>
+
+  <option value="161">Taiwanese</option>
+
+  <option value="162">Tajik</option>
+
+  <option value="163">Tanzanian</option>
+
+  <option value="164">Thai</option>
+
+  <option value="195">Togolese</option>
+
+  <option value="196">TRINIDADIAN</option>
+
+  <option value="194">Tunisian</option>
+
+  <option value="165">Turkish</option>
+
+  <option value="1063">Turkmen</option>
+
+  <option value="166">Ugandan</option>
+
+  <option value="167">Ukrainian</option>
+
+  <option value="1013">United states of America</option>
+
+  <option value="1045">Unused</option>
+
+  <option value="168">Uruguayan</option>
+
+  <option value="169">Uzbekistani</option>
+
+  <option value="185">Vanuatu</option>
+
+  <option value="170">Venezuelan</option>
+
+  <option value="171">Vietnamese</option>
+
+  <option value="172">YEMENI</option>
+
+  <option value="173">Zambian</option>
+
+  <option value="174">Zimbabwean</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+                                    
+                                
+							</div>
+                                <div class="right aligned">
+                                    <button type="submit" class="ui primary large aligned button">Search</button>
+                                </div>
+                                <div class="two fields">
+                                    <script src="https://www.google.com/recaptcha/api.js?render=6LflPAwnAAAAAL2wBGi6tSyGUyj-xFvftINOR9xp"></script>
+<script type="text/javascript">
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LflPAwnAAAAAL2wBGi6tSyGUyj-xFvftINOR9xp', {action: 'form'})
+        .then(function(token) {
+            console.log("reCAPTCHA validated for 'data-widget-uuid=\"c518d93d7db7485c9b474d57f7053639\"'. Setting input value...")
+            var element = document.querySelector('.g-recaptcha[data-widget-uuid="c518d93d7db7485c9b474d57f7053639"]');
+            element.value = token;
+        });
+    });
+</script>
+
+<input class="g-recaptcha"
+    type="hidden"
+    name="captcha"
+     required_score="0.1" data-sitekey="6LflPAwnAAAAAL2wBGi6tSyGUyj-xFvftINOR9xp" id="id_captcha" data-widget-uuid="c518d93d7db7485c9b474d57f7053639" data-callback="onSubmit_c518d93d7db7485c9b474d57f7053639" data-size="normal"
+>
+                                    
+							    </div>
+							</div>
+					</form>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+        <div class="mobile hidden">
+            
+
+
+<div class="ui large modal gcc-modal gcc-slip-modal gcc-slip-web-view">
+    <i class="close icon"></i>
+    <div class="header">
+        <div class="header__logo"><img class="ui image" src="https://wafid.com/static/svg/logo-gcc-slip.svg"></div>
+        <div class="header__text">Medical Examination Registration Confirmation</div>
+        <div class="header__logo"><img class="ui image" src="https://wafid.com/static/img/gcc-logo-white.png"></div>
+    </div>
+    <div class="content">
+        <div class="description">
+            <table class="ui basic table table--modal stackable slip-table">
+                <thead>
+                <tr>
+                    <th colspan="4" class="center aligned"><h3>Medical Examination Appointment Slip</h3>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="field_name">Merchant reference №</td>
+                    <td class="field_value"></td>
+                </tr>
+                <tr>
+                    <td class="field_name">GCC Slip №</td>
+                    <td class="field_value"></td>
+                </tr>
+                <tr>
+                    <td class="field_name">First name</td>
+                    <td class="field_value">MOHAMMAD</td>
+                    <td class="field_name">Nationality</td>
+                    <td class="field_value">Bangladeshi</td>
+                </tr>
+                <tr>
+                    <td class="field_name">Last name</td>
+                    <td class="field_value">ARIF</td>
+                    <td class="field_name">National ID</td>
+                    <td class="field_value">4213232574</td>
+                </tr>
+                <tr>
+                    <td class="field_name">Gender</td>
+                    <td class="field_value">Male</td>
+                    <td class="field_name">Marital status</td>
+                    <td class="field_value">Unmarried</td>
+                </tr>
+                <tr>
+                    <td class="field_name">Country traveling to</td>
+                    <td class="field_value">Saudi Arabia</td>
+                    <td class="field_name">Date of Birth</td>
+                    <td class="field_value">22/Jul/2002</td>
+                </tr>
+                <tr>
+                    <td class="field_name">Passport №</td>
+                    <td class="field_value">A18839571</td>
+                    <td class="field_name">Passport expiry date</td>
+                    <td class="field_value">26/May/2035</td>
+                </tr>
+                <tr>
+                    <td class="field_name">Passport issues place</td>
+                    <td class="field_value">Dhaka</td>
+                    <td class="field_name">Passport issue date</td>
+                    <td class="field_value">27/May/2025</td>
+                </tr>
+                <tr>
+                    <td class="field_name">Applied position</td>
+                    
+                        <td class="field_value">Worker</td>
+                    
+                    <td class="field_name">Payment status</td>
+                    <td class="field_value">
+                        <i class="icon check circle" style="color: green"></i>PAID
+                    </td>
+                </tr>
+                <tr>
+                    
+                        <td class="field_name">Amount</td>
+                        <td class="field_value">10 USD</td>
+                    
+                    
+                        <td class="field_name">Appointment Type</td>
+                        <td class="field_value">Standard</td>
+                    
+                </tr>
+                
+                
+                </tbody>
+            </table>
+
+            <table class="ui basic table table--modal stackable mc-table">
+                <thead>
+                <tr class="center aligned">
+                    <th colspan="4">
+                        <h3>Medical center information</h3>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td class="field_value" colspan="2">
+                            MAJUMDER HEATLH CARE</td>
+                    </tr>
+                    <tr>
+                        <td class="field_value" colspan="2">
+                            <i class="map marker alternate icon"></i>
+                            Bangladesh,
+                            Dhaka,
+                            Adamjee Court, Annex Building 2, Level-3,
+                            ,
+                                119-120 Motijheel C/A, Dhaka 1000
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="field_value" colspan="2">
+                            <i class="mobile alternate icon gray"></i>
+                            
+                                +8802222225639
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="field_value" colspan="2">
+                            <i class="envelope icon gray"></i>
+                            
+                                <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8fe2eee5fae2ebeafde7eaeee3fbe7eceefdeabdbfbdbacfe8e2eee6e3a1ece0e2">[email&#160;protected]</a>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="field_value" colspan="2">
+                            <i class="globe alternate icon table-subtitle"></i>
+                            https://majumderhealthcare.com
+                        </td>
+                    </tr>
+                    
+                
+                <tr class="barcode">
+                    <td class="field_value" colspan="4">
+                        <img src="/get-barcode/gprl58MvD3XeLM8/">
+                    </td>
+                </tr>
+                <tr class="slip-dates">
+                    <td class="field_name">Generated data</td>
+                    <td class="field_value slip-dates__generated">9/Sep/2025</td>
+                    <td class="field_value slip-dates__valid_till right aligned" colspan="2">
+                        <i class="icon info circle blue"></i>
+                        Slip is valid only till 
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="actions" style="margin-bottom: 2%;">
+        
+            
+        
+        <div class="ui button basic cancel">Close</div>
+        <iframe id="print_pdf" src="/appointment/gprl58MvD3XeLM8/slip/print/" style="display:none;"></iframe>
+        <a href="#" class="ui button primary"
+           onclick="window.open('/appointment/gprl58MvD3XeLM8/slip/download/', '_self');">
+            PDF
+        </a>
+        <a href="#" class="ui button primary" onclick="printTrigger('print_pdf');">
+            Print
+        </a>
+    </div>
+</div>
+
+            <!-- Confirmation Modal -->
+
+
+<div class="hidden" data-bs-backdrop="static" id="confirm-modal" style="display: none;">
+    <div class="modal-dialog" style="width: 70vh; height: 50vh;">
+        <div class="modal-content" style="border: 2px solid #fff; background-color: #fff; border-radius: 10px 10px 10px 10px;">
+
+                <i class="close icon" data-bs-dismiss="modal" style="font-size: 2em; position: relative !important; left: 47%;"></i>
+            <div class="modal-header">
+                <h2 class="ui header" style="padding-bottom: 5%; font-size: larger;">
+                    <div class="content md-header">Confirm Submission</div>
+                </h2>
+            </div>
+            <div class="modal-body" style="padding-bottom: 5%; font-size: larger;">
+            </div>
+            <div class="modal-footer"
+                 style="display: flex; justify-content: space-between; background-color: #fff; border-top: 2px solid #fff; padding: 10px;">
+                <a type="button" class="ui secondary small  fluid button" data-bs-dismiss="modal">No</a>
+                <button type="button" class="ui primary small submit fluid button small-side-paddings"
+                        onclick="submitForm()">Yes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+<style>
+    .otp-boxes-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+    .disabled-link {
+        pointer-events: none;
+        color: grey;
+        text-decoration: none;
+        cursor: default;
+    }
+
+    .otp-box {
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        font-size: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .email-otp-modal {
+        padding: 70px 72px;
+        width: 494px !important;
+        height: 575px;
+    }
+
+    .otp-content-container {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .countdown-container {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-container {
+        margin-bottom: 30px;
+    }
+
+    .header-text {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .info-text {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .actions {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .ui.secondary.button.large {
+        background-color: #f5f5f5;
+        color: #333;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+
+    .ui.primary.button.large {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="ui modal email-otp-modal hidden">
+    <div class="ui container text-center">
+        <div class="logo-container">
+            <img src="https://wafid.com/static/svg/logo.svg" class="ui centered small image" style="margin-top: 1rem;">
+        </div>
+        <div class="otp-content-container">
+            <h3 class="ui header header-text">OTP Verification</h3>
+            <p class="info-text">
+                Enter the OTP sent to <span class="masked-email" style="color: #6F1D46;"></span>
+            </p>
+
+            <input type="hidden" name="otp_code" id="otp_code" value="">
+            <div class="otp-boxes-container">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+            </div>
+            <div id="otp-error" style="color: red; text-align: center; margin-top: 10px; display: none;">
+                        This field is required
+            </div>
+            <div id="otp-error-otp" style="color: red; text-align: center; margin-top: 10px; display: none;">
+                        Incorrect OTP
+            </div>
+            <div class="countdown-container">
+                <span class="info-text">Time Remaining</span>
+                <div id="countdown" class="countdown-time" style="color: #0d47a1; font-size: 24px;">01:00</div>
+            </div>
+            <div class="resend-otp-container" style="margin-top: 10px;margin-bottom: 10px;">
+                <div class="text-center" id="resend-otp-div" style="display: none;">
+                    Didn't get the code? 
+                    <a id="resend-otp-btn" href="#">
+                           Resend
+                    </a>
+                </div>
+            </div>
+            
+            <div class="otp-hint">
+                <p>
+                    <strong>Hint:</strong> Please check your inbox, and if you didn’t receive it, check your junk or spam folder.
+                </p>
+            </div>
+            <div class="actions">
+                <button class="ui secondary button large" onclick="close_modal()">
+                    Cancel
+                </button>
+                <button class="ui primary button large" id="submit-otp-btn">
+                    Verify
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="mobile tablet only">
+                
+
+
+
+    
+        <link rel="stylesheet" href="https://wafid.com/static/css/components/slip-modal-mobile.css">
+    
+
+
+
+<div class="ui large modal gcc-modal gcc-slip-modal gcc-slip-mobile-view">
+    
+    <div class="actions test-Buttons-continer">
+        <div class="ui button basic cancel test-Buttons-style">Close</div>
+        <iframe id="print_pdf" src="/appointment/gprl58MvD3XeLM8/slip/print/" style="display:none;"></iframe>
+        <a href="#" class="ui button primary test-Buttons-style"
+           onclick="window.open('/appointment/gprl58MvD3XeLM8/slip/download/', '_self');">
+            PDF
+        </a>
+        <a href="#" class="ui button primary test-Buttons-style" onclick="printTrigger('print_pdf');">
+            Print
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="description">
+            <div style="border: 0.5px solid #cfcfcf;">
+                <table class="ui basic table table--modal stackable mc-table">
+                    <thead style="display: contents;">
+                    <tr>
+                        <th colspan="4" class="center aligned"><h3 class="header-mobile"
+                                                                   style="font-size: 1rem !important;">Medical Examination Appointment Slip</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="field_name center aligned">
+                            Generated data
+                            <div class="field_value center aligned">
+                                9/Sep/2025
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="field_value center aligned" colspan="2">
+						<span class="valid-till">
+						
+                            Slip is valid only till 
+                        
+                        </span>
+                        </td>
+                    </tr>
+                    <tr class="barcode">
+                        <td class="field_value" colspan="2" style="display: flex !important; justify-content: center;">
+                            <img class="barcode-img" src="/get-barcode/gprl58MvD3XeLM8/">
+                        </td>
+                    </tr>
+                    </thead>
+                </table>
+
+                <table class="ui basic table table--modal stackable mc-table">
+                    <tr class="tr-mobile">
+                        <td class="field_name">
+                            Merchant reference №
+                            <div class="field_value">
+                                Appointment-90909202574532451-zlHRFxGmw3
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="tr-mobile">
+                        <td class="field_name">
+                            GCC Slip №
+                            <div class="field_value">
+                                90909202574532451
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <table class="ui basic table table--modal stackable mc-table">
+                    <tr>
+                        <td class="field_name">First name
+                            <div class="field_value">
+                                MOHAMMAD
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="field_name">
+                            Last name
+                            <div class="field_value">
+                                ARIF
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="tr-mobile">
+                        <td class="field_name">
+                            Nationality
+                            <div class="field_value">
+                                Bangladeshi
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="field_name" colspan="2">
+                            National ID
+                            <div class="field_value">
+                                4213232574
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="tr-mobile">
+                        <td class="field_name">
+                            Gender
+                            <div class="field_value">
+                                Male
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="field_name" colspan="2">
+                            Date of Birth
+                            <div class="field_value">
+                                22/Jul/2002
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="tr-mobile">
+                        <td class="field_name">
+                            Marital status
+                            <div class="field_value">
+                                Unmarried
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="field_name" colspan="2">
+                            Country traveling to
+                            <div class="field_value">
+                                Saudi Arabia
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="tr-mobile">
+                        <td class="field_name">
+                            Passport №
+                            <div class="field_value">
+                                A18839571
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="field_name" colspan="2">
+                            Passport issues place
+                            <div class="field_value">
+                                Dhaka
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="tr-mobile">
+                        <td class="field_name">
+                            Passport issue date
+                            <div class="field_value">
+                                27/May/2025
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="field_name" colspan="2">
+                            Passport expiry date
+                            <div class="field_value">
+                                26/May/2035
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="tr-mobile">
+                        <td class="field_name">
+                            Applied position
+                            <div class="field_value">
+                                
+                                    Worker
+                                
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                            <td class="field_name" colspan="2">
+                                Amount
+                                <div class="field_value" colspan="2">
+                                    10 USD
+                                </div>
+                            </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="field_name">
+                            Payment status
+                            <div class="field_value">
+                                <i class="icon check circle" style="color: green"></i>PAID
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="field_name" colspan="2">
+                            Appointment Type
+                            <div class="field_value" colspan="2">
+                                
+                                    Standard
+                                
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    
+                </table>
+            </div>
+            <div style="border: 0.5px solid #cfcfcf; margin-top: 20px;">
+                <table class="ui basic table table--modal stackable mc-table custom-mc">
+                    <thead style="display: contents;">
+                    <tr class="center aligned">
+                        <th colspan="4">
+                            <h3 class="header-mobile second-section">Medical center information</h3>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                        <tr>
+                            <td class="field_name">
+                                Medical Center Name
+                                <div class="field_value">
+                                    MAJUMDER HEATLH CARE
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field_name">
+                                Location
+                                <div class="field_value">
+                                    Bangladesh,
+                                    Dhaka,
+                                    Adamjee Court, Annex Building 2, Level-3,
+                                    ,
+                                        119-120 Motijheel C/A, Dhaka 1000
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field_name">
+                                Mobile Number
+                                <div class="field_value">
+                                    
+                                        +8802222225639
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field_name">
+                                Email
+                                <div class="field_value">
+                                    
+                                        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9cf1fdf6e9f1f8f9eef4f9fdf0e8f4fffdeef9aeacaea9dcfbf1fdf5f0b2fff3f1">[email&#160;protected]</a>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field_name">
+                                Website
+                                <div class="field_value">
+                                    https://majumderhealthcare.com
+                                </div>
+                            </td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="actions test-Buttons-continer">
+        <div class="ui button basic cancel test-Buttons-style">Close</div>
+        <iframe id="print_pdf" src="/appointment/gprl58MvD3XeLM8/slip/print/" style="display:none;"></iframe>
+        <a href="#" class="ui button primary test-Buttons-style"
+           onclick="window.open('/appointment/gprl58MvD3XeLM8/slip/download/', '_self');">
+            PDF
+        </a>
+        <a href="#" class="ui button primary test-Buttons-style" onclick="printTrigger('print_pdf');">
+            Print
+        </a>
+    </div>
+</div>
+
+
+        </div>
+
+	
+
+    </main>
+
+
+
+    <div class="ui vertical basic segment footer">
+    <div class="ui container center aligned">
+    <div class="ui container center aligned">
+        <img class="footer-logo" src="https://wafid.com/static/svg/gcc-old-logo-white.svg" alt="gulf health council logo">
+        <div class="social-media-icons">
+            <a href="https://www.instagram.com/ghc_gcc/channel/?hl=en"><img class="social-media-icons-colors"
+                                                                            src="https://wafid.com/static/svg/instagram.svg"
+                                                                            alt="instagram"></a>
+            <a href=" https://ar-ar.facebook.com/GHCouncil/"><img class="social-media-icons-colors"
+                                                                  src="https://wafid.com/static/svg/facebook.svg" alt="facebook"></a>
+            <a href="https://twitter.com/ghc_gcc"><img class="social-media-icons-colors"
+                                                       src="https://wafid.com/static/svg/twitter.svg" alt="twitter"></a>
+            <a href="https://www.youtube.com/channel/UCrKbHYpmpC_OrAfZ5P_qZXA"><img class="social-media-icons-colors"
+                                                                                    src="https://wafid.com/static/svg/youtube.svg"
+                                                                                    alt="youtube"></a>
+        </div>
+        <div class="copyright">
+            <div class="copyright">
+                <span>@ 2025 </span>
+                Gulf Health Council. All rights reserved
+            </div>
+            
+        </div>
+    </div>
+
+
+    
+
+<script data-cfasync="false" src="https://wafid.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://wafid.com/static/jsi18n/en/djangojs.js"></script>
+
+    <script src="https://wafid.com/static/vendor/jquery.min.js"></script>
+    <script src="https://wafid.com/static/vendor/semantic/dist/semantic.min.js"></script>
+    <script src="https://wafid.com/static/js/vendor/jquery.inputmask.min.js"></script>
+    <script src="https://wafid.com/static/js/vendor/cropper.min.js"></script>
+    <script src="https://wafid.com/static/js/vendor/jquery-cropper.min.js"></script>
+    <script src="https://wafid.com/static/js/vendor/glide.min.js"></script>
+    <script src="https://wafid.com/static/js/vendor/js.cookie.js"></script>
+    <script src="https://wafid.com/static/js/main.js"></script>
+    <script src="https://wafid.com/static/js/table-config.js"></script>
+    <script src="https://wafid.com/static/js/purify.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.ui.dropdown').dropdown();
+            $('.ui.dropdown.item').dropdown({on: 'hover'});
+            $('.ui.checkbox').checkbox();
+            $('.message .close')
+                .on('click', function () {
+                    $(this)
+                        .closest('.message')
+                        .transition('fade');
+                });
+        });
+    </script>
+
+    <!-- start forms and widgets-specific -->
+    <script src="https://wafid.com/static/vendor/semantic-ui-calendar/calendar.min.js"></script>
+    <script src="https://wafid.com/static/vendor/semantic/dist/components/dropdown.js"></script>
+    <script src="https://wafid.com/static/vendor/state-machine/state-machine.min.js"></script>
+    <script src="https://wafid.com/static/js/calendar-widget.js"></script>
+    <script src="https://wafid.com/static/js/vendor/moment.js"></script>
+    <script src="https://wafid.com/static/js/components/single-dropdown-widget.js"></script>
+    <script src="https://wafid.com/static/js/components/multiple-dropdown-widget.js"></script>
+    <script src="https://wafid.com/static/js/captcha.js"></script>
+    <script src="https://wafid.com/static/js/components/file-widget.js"></script>
+    <script src="https://wafid.com/static/js/components/number-input-widget.js"></script>
+    <script src="https://wafid.com/static/js/components/labeled-select-widget.js"></script>
+    <script src="https://wafid.com/static/js/city-country-controls.js"></script>
+
+    <!-- end forms and widgets-specific -->
+
+
+
+    
+	<script>
+        const passport = "A18839571";
+        function close_modal () {
+            clearInterval(otpTimerInterval);
+            $('#countdown').text('01:00');
+            $('.email-otp-modal').modal('hide');
+            document.querySelector('#resend-otp-div').style.display = 'none';
+            localStorage.removeItem('otpExpiryTime');
+        }
+        function showJSMessage(type, message) {
+            const container = document.getElementById('js-messages');
+            const alertClass = {
+                success: 'positive',
+                error: 'negative',
+                warning: 'warning',
+                info: 'info'
+            }[type] || 'info';
+        
+            container.innerHTML = `
+                <div class="ui ${alertClass} message">
+                    <i class="close icon" onclick="this.parentElement.remove();"></i>
+                    <div class="header">${message}</div>
+                </div>
+            `;
+        
+        }
+        function is_mobile() {
+            return window.matchMedia('only screen and (max-width: 767px)').matches;
+        }
+
+        function confirmModal(){
+            $('#confirm-modal .modal-body').html('<p> You are about to cancel the appointment, are you sure? </p> <br> <strong> Please note that no refund will be issued once the appointment is canceled </strong>');
+            $('#confirm-modal').modal('show');
+        }
+        function submitForm() {
+            // Send email to backend for OTP generation
+            $.ajax({
+                url: '/cancel-appt-send-otp/',
+                type: 'POST',
+                data: {
+                    gcc_slip_no: '90909202574532451',
+                    csrfmiddlewaretoken: $('[name=csrfmiddlewaretoken]').val()
+                },
+                success: function (response) {
+                    // Show OTP modal on success
+                    showOTPModal();
+                    encryptedUserId = response.encrypted_user_id;
+                    userEmail = response.email;
+                    localStorage.setItem('encryptedUserId', encryptedUserId);
+                    localStorage.setItem('userEmail', userEmail);
+                },
+                error: function (xhr) {
+                     let message = "";
+                
+                    // Try to parse JSON response
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        message = xhr.responseJSON.message;
+                    } else if (xhr.responseText) {
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.message) {
+                                message = response.message;
+                            }
+                        } catch (e) {
+                            let message = "An unexpected error occurred.";
+                        }
+                    }
+                
+                    showJSMessage('error', message);
+                }
+            });
+        }
+        function hideOTPModal() {
+            $('.email-otp-modal').hide();
+        }
+        // Countdown timer
+        let otpTimerInterval;
+
+        function startOTPTimer() {
+            const now = Date.now();
+            const expiryTime = now + 60000; // 60 seconds from now
+            localStorage.setItem('otpExpiryTime', expiryTime);
+            runOTPTimer(expiryTime);
+        }
+        
+        function runOTPTimer(expiryTime) {
+            clearInterval(otpTimerInterval);
+        
+            otpTimerInterval = setInterval(() => {
+                const now = Date.now();
+                let remaining = Math.floor((expiryTime - now) / 1000);
+        
+                if (remaining <= 0) {
+                    clearInterval(otpTimerInterval);
+                    $('#countdown').text('00:00');
+                    localStorage.removeItem('otpExpiryTime');
+                    document.querySelector('#resend-otp-div').style.display='block';
+                    $('#resend-otp-btn').removeClass('disabled-link');
+                    return;
+                }
+        
+                let min = String(Math.floor(remaining / 60)).padStart(2, '0');
+                let sec = String(remaining % 60).padStart(2, '0');
+                $('#countdown').text(`${min}:${sec}`);
+            }, 1000);
+        }
+        $('#resend-otp-btn').on('click', function () {
+            $(this).addClass('disabled-link');
+            $.ajax({
+                url: '/cancel-appt-send-otp/',
+                type: 'POST',
+                data: {
+                    passport: ($("#id_passport").length && $("#id_passport").val().trim() !== '' ? $("#id_passport").val() : passport),
+                    csrfmiddlewaretoken: $('[name=csrfmiddlewaretoken]').val()
+                },
+                success: function (response) {
+                    showJSMessage('success', 'OTP resent successfully.');
+                    encryptedUserId = response.encrypted_user_id;
+                    userEmail = response.email;
+                    localStorage.setItem('encryptedUserId', encryptedUserId);
+                    localStorage.setItem('userEmail', userEmail);
+                    startOTPTimer(); // restart countdown
+                },
+                error: function () {
+                    showJSMessage('error', 'Failed to resend OTP. Please try again.');
+                    $('#resend-otp-btn').removeClass('disabled-link'); // allow retry
+                }
+            });
+        });
+        
+        function initOTPBoxes() {
+            const otpBoxes = document.querySelectorAll('.otp-box');
+            const hiddenInput = document.getElementById('otp_code');
+    
+            otpBoxes.forEach((box, index) => {
+                box.value = '';  // Reset
+                box.addEventListener('input', (e) => {
+                    if (e.target.value) {
+                        if (index < otpBoxes.length - 1) {
+                            otpBoxes[index + 1].focus();
+                        }
+                    }
+                    updateHiddenInput();
+                });
+    
+                box.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                        otpBoxes[index - 1].focus();
+                    }
+                });
+    
+                box.addEventListener('keypress', (e) => {
+                    if (!/[0-9]/.test(e.key)) e.preventDefault();
+                });
+    
+                box.addEventListener('paste', (e) => {
+                    e.preventDefault();
+                    const pasted = e.clipboardData.getData('text').trim();
+                    if (/^\d{6}$/.test(pasted)) {
+                        [...pasted].forEach((char, i) => {
+                            if (otpBoxes[i]) otpBoxes[i].value = char;
+                        });
+                        updateHiddenInput();
+                    }
+                });
+            });
+    
+            otpBoxes[0].focus();
+    
+            function updateHiddenInput() {
+                const code = Array.from(otpBoxes).map(b => b.value).join('');
+                hiddenInput.value = code;
+            }
+        }
+        function showOTPModal() {
+    
+            // Show OTP modal and start timer
+            $('.email-otp-modal').modal('show');
+            const savedExpiry = localStorage.getItem('otpExpiryTime');
+            if (savedExpiry && parseInt(savedExpiry) > Date.now()) {
+                runOTPTimer(parseInt(savedExpiry));
+            } else {
+                startOTPTimer();
+            }
+            initOTPBoxes();
+        }
+        
+        $('#submit-otp-btn').on('click', function () {
+            const otpCode = $('#otp_code').val();
+            const email = $('#id_email').val();
+    
+            if (!/^\d{6}$/.test(otpCode)) {
+                alert('Please enter a 6-digit OTP.');
+                return;
+            }
+    
+            $.ajax({
+                url: '/cancel-appt-validate-otp/',
+                type: 'POST',
+                data: {
+                    gcc_slip_no: '90909202574532451',
+                    email: localStorage.getItem('userEmail'),
+                    encrypted_user_id: localStorage.getItem('encryptedUserId'),
+                    otp: otpCode,
+                    csrfmiddlewaretoken: $('[name=csrfmiddlewaretoken]').val()
+                },
+                success: function (data) {
+                    $('.email-otp-modal').modal('hide');
+                    showJSMessage('success',data.message);
+                },
+                error: function (xhr) {
+                    $('.email-otp-modal').modal('hide');
+                    
+                    let message = "";
+                
+                    // Try to parse JSON response
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        message = xhr.responseJSON.message;
+                    } else if (xhr.responseText) {
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.message) {
+                                message = response.message;
+                            }
+                        } catch (e) {
+                            let message = "An unexpected error occurred.";
+                        }
+                    }
+                
+                    showJSMessage('error', message);
+                }
+            });
+        });
+        
+
+        if ( is_mobile() ) {
+            $(document).ready(function() {
+                if (document.querySelector(".confirm-modal")) {
+                    document.querySelector(".confirm-modal").style.display = 'none';
+                }
+                $('.gcc-slip-mobile-view').modal('show');
+            });
+        }
+        else {
+            $(document).ready(function() {
+                if (document.querySelector(".confirm-modal")) {
+                    document.querySelector(".confirm-modal").style.display = 'none';
+                }
+                $('.gcc-slip-web-view').modal('show');
+            });
+        }
+
+	</script>
+
+</body>
+</html>
